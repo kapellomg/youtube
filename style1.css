@@ -1,0 +1,12 @@
+body
+{
+    background-image: url("./img/unnamed.jpg");
+     background-color: #cccccc;
+    
+}
+
+.card{
+    margin-left: 10px;
+    width: 400px;
+    display: inline-block;
+}
