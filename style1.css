@@ -2,7 +2,8 @@ body
 {
     background-image: url("./img/download.jpg");
      background-color: #cccccc;
-
+    background-repeat:no-repeat;
+    background-blend-mode:color;
 }
 
 .card{
