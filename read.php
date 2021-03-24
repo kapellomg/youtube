@@ -2,26 +2,27 @@
 // met deze gegevens kunnen we inloggen op de mysql server en een data base selecteren.
 $servername = "localhost";
 $username = "root";
-$password = "";
-// database moet nog een naam! 
-$dbname = "";
+$password = ""; 
+$dbname = "opleiding";
 
 // met deze functie maken we contact met de mysql server
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-$sql = "SELECT * FROM `users`";
+$sql = "SELECT * FROM `inschrijving`";
 // Dit is de functie die de query $sql via de verbinding $conn naar de databass stuurt.
 $result = mysqli_query($conn, $sql);
 
 $records = "";
+
 while ($record = mysqli_fetch_assoc($result)) {
   $records .= "<tr>
                   <th scope ='row'>" . $record["id"] . " </th>
-                  <td >" . $record["naam"] . "</td>
-                  <td> " .  $record["leeftijd"] . "</td>
+                  <td> " . $record["naam"] . "</td>
+                  <td> " . $record["leeftijd"] . "</td>
                   <td> " . $record["studies"] . "</td>
                   <td> " . $record["telefoonnummer"] . "</td>
                   <td> " . $record["email"] . "</td>
+                  <td> " . $record["postcode"] . "</td>
                   <td> 
                     <a href='./update.php?id=" . $record["id"] . "'>
                       <img src='./img/icons/b_edit.png'alt ='pencil'>
@@ -58,15 +59,16 @@ while ($record = mysqli_fetch_assoc($result)) {
   <table class="table table-hover">
     <thead>
       <tr>
-        <th scope="col" class="text-white">id</th>
-        <th scope="col" class="text-white" >Naam</th>
-        <th scope="col" class="text-white" >leeftijd</th>
-        <th scope="col" class="text-white">studies</th>
-        <th scope="col" class="text-white">telefoonnummer</th>
-        <th scope="col" class="text-white">email</th>
+        <th scope="col" class="">id</th>
+        <th scope="col" class="">naam</th>
+        <th scope="col" class="">leeftijd</th>
+        <th scope="col" class="">studies</th>
+        <th scope="col" class="">telefoonnummer</th>
+        <th scope="col" class="">email</th>
+        <th scope="col" class="">postcode</th>
       </tr>
     </thead>
-    <tbody class="text-white", style="font-size:1.3vw"  >
+    <tbody class="", style="font-size:1.3vw"  >
       <?php
       echo $records;
       ?>

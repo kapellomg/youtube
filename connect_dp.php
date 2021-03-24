@@ -4,7 +4,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "formulier dp";
+$dbname = "opleiding";
 
 // met deze functie maken we contact met de mysql server
 $conn = mysqli_connect($servername, $username, $password, $dbname);
